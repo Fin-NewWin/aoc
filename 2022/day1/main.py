@@ -1,15 +1,15 @@
 def main():
 
     max_cal = 0
+    curr_cal = 0
     m_cal_stack = []
 
     file = open("input", "r")
     lines = file.readlines()
 
-    curr_cal = 0
-    for i in lines:
-        if i != "\n":
-            curr_cal += int(i)
+    for line in lines:
+        if line != "\n":
+            curr_cal += int(line)
         else:
             max_cal = max(curr_cal, max_cal)
             if len(m_cal_stack) < 3:
@@ -21,8 +21,8 @@ def main():
             curr_cal = 0
 
 
-    print(m_cal_stack)
-    print(sum(m_cal_stack))
+    # print(m_cal_stack)
+    # print(sum(m_cal_stack))
     print(max_cal)
 
 
