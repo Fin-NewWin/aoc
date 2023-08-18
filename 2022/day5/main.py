@@ -5,10 +5,9 @@ def main():
 
     f = open("input", "r")
     lines = f.readlines()
-    arr = [[]] * 9
-    arr2 = []
 
     arr = [[] for i in range(9)]
+    arr2 = []
     for i in lines:
         if "[" in i:
             pos = 0
@@ -21,11 +20,12 @@ def main():
             i = i.split()
             n = int(i[1])
             for j in range(n):
-                arr[int(i[5]) - 1].insert(0, arr[int(i[3]) - 1][0])
-                arr[int(i[3]) - 1].pop(0)
-                arr2[int(i[5]) - 1].insert(0, arr2[int(i[3]) - 1][n - j - 1])
-                arr2[int(i[3]) - 1].pop(n - j - 1)
+                arr[int(i[5]) - 1].insert(0, arr[int(i[3]) - 1].pop(0))
+                arr2[int(i[5]) - 1].insert(0, arr2[int(i[3]) - 1].pop(n - j - 1))
 
+
+    print(arr)
+    print(arr2)
 
     for i in arr:
         print(i[0], end="")
