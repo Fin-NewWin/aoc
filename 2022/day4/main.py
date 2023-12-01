@@ -3,7 +3,7 @@ def main():
     count1 = 0
     count2 = 0
 
-    f = open("input", "r")
+    f = open("day4.txt", "r")
     lines = f.readlines()
 
     for i in lines:
