@@ -14,6 +14,7 @@ def main():
         "8",
         "9",
     ]
+
     numbers = [
         "zero",
         "one",
@@ -26,7 +27,9 @@ def main():
         "eight",
         "nine",
     ]
+
     sum = 0
+
     for line in lines:
         first = last = ""
         for i in range(len(line)):
@@ -41,6 +44,7 @@ def main():
                         if first == "":
                             first = line[i:cnt]
                         last = line[i:cnt]
+                        break
                     cnt += 1
         if first in numbers:
             first = number[numbers.index(first)]
@@ -48,9 +52,6 @@ def main():
             last = number[numbers.index(last)]
         sum += int(first + last)
     print(sum)
-
-    # print(m_cal_stack)
-    # print(sum(m_cal_stack))
 
 
 if __name__ == "__main__":
